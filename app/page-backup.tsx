@@ -3,14 +3,14 @@ export default function Home() {
     <main
       style={{
         fontFamily: "Arial, sans-serif",
-        backgroundColor: "#f8ffff",
+        backgroundColor: "#f8fbff",
         minHeight: "100vh",
       }}
     >
       {/* Header */}
       <nav
         style={{
-         background: "#0284c7",
+          background: "linear-gradient(135deg,#0f172a,#1e293b)",
           color: "white",
           padding: "15px 40px",
           display: "flex",
@@ -58,11 +58,12 @@ export default function Home() {
       <section
         style={{
  background:
-"linear-gradient(rgba(14,165,233,.75),rgba(59,130,246,.75)),url('/pcb bg1.jpg')",
+"linear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.85)),url('/pcb bg1.jpg')",
 backgroundSize: "cover",
-backgroundPosition: "center", color: "white",
+backgroundPosition: "center",
+  color: "white",
   textAlign: "center",
-  padding: "180px 20px",
+  padding: "140px 20px",
 }}
       >
         <h1
@@ -81,7 +82,7 @@ backgroundPosition: "center", color: "white",
     fontWeight: "400",
   }}
 >
-  Electronic Components | PCB Design | PCB Fabrication | PCB Assembly | BOM Fulfillment | Technical Support
+  Electronic Components | PCB Design | PCB Fabrication | PCB Assembly
 </h3>
 
         <p
@@ -91,7 +92,8 @@ backgroundPosition: "center", color: "white",
             lineHeight: "1.8",
           }}
         >
-          End-to-end PCB Design, PCB Fabrication, PCB Assembly and Electronic Components sourcing services. Delivering reliable and cost-effective electronics solutions across India.
+          Trusted supplier of electronic components and PCB solutions for
+          startups, R&D teams and industrial customers.
         </p>
 
         <a
@@ -109,20 +111,11 @@ backgroundPosition: "center", color: "white",
           💬 Get Quote on WhatsApp
         </a>
       </section>
-      <p
-  style={{
-    color: "#dcfce7",
-    fontSize: "22px",
-    fontWeight: "bold",
-    margin: "15px 0",
-  }}
->
-  We Deliver More Than Expected
-</p>
+
       {/* About */}
       <section
         style={{
-          padding: "50px 20px",
+          padding: "180px 20px",
           textAlign: "center",
         }}
       >
@@ -158,75 +151,28 @@ backgroundPosition: "center", color: "white",
       textAlign: "center",
     }}
   >
+    <div className="card">
+      <h2>10000+</h2>
+      <p>Electronic Components Supplied</p>
+    </div>
+
+    <div className="card">
+      <h2>1000+</h2>
+      <p>PCB Projects Supported</p>
+    </div>
+
+    <div className="card">
+      <h2>50+</h2>
+      <p>Happy Customers</p>
+  
+    </div>
   </div>
 </section>
-<section
-  style={{
-    padding: "50px 20px",
-    background: "#ffffff",
-  }}
->
-  <h2
-    style={{
-      textAlign: "center",
-      fontWeight: "1000",
-      fontSize: "2.5rem",
-      color: "#000",
-      marginBottom: "15px",
-    }}
-  >
-  Industries We Serve
-  </h2>
-  <p
-    style={{
-      textAlign: "center",
-      maxWidth: "800px",
-      margin: "0 auto 40px",
-      lineHeight: "1.8",
-    }}
-  >
-    Providing PCB Design, Fabrication, Assembly and Component Sourcing
-    Solutions for Diverse Industries.
-  </p>
 
- <div
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-    gap: "20px",
-    maxWidth: "1200px",
-    margin: "auto",
-  }}
->
-  <div className="card">
-    <h3>🏭 Industrial Automation</h3>
-  </div>
-
-  <div className="card">
-    <h3>⚖️ Weighing Scale Manufacturing</h3>
-  </div>
-
-  <div className="card">
-    <h3>🌐 IoT & Embedded Systems</h3>
-  </div>
-
-  <div className="card">
-    <h3>🏥 Medical Electronics</h3>
-  </div>
-
-  <div className="card">
-    <h3>🚗 Automotive Electronics</h3>
-  </div>
-
-  <div className="card">
-    <h3>🔬 Research & Development</h3>
-  </div>
-</div>
-</section>
       {/* Services */}
       <section
         id="services"
-        style={{fontWeight:900,color:"#000",
+        style={{
           padding: "60px 40px",
           background: "#f8fafc",
         }}
@@ -241,148 +187,17 @@ backgroundPosition: "center", color: "white",
             marginTop: "30px",
           }}
         >
-          <div className="card">
-  <h3>📐 PCB Design</h3>
-  <p>
-    Schematic design, PCB layout, multilayer board design and prototype support.
-  </p>
-</div>
-
-<div className="card">
-  <h3>🏭 PCB Fabrication</h3>
-  <p>
-    High-quality prototype and production PCB manufacturing with fast turnaround.
-  </p>
-</div>
-
-<div className="card">
-  <h3>⚙️ PCB Assembly</h3>
-  <p>
-    SMT and Through-Hole assembly services
-  </p>
-</div>
-
-<div className="card">
-  <h3>🔌 Electronic Components</h3>
-  <p>
-    Reliable sourcing of ICs, connectors, sensors, relays and BOM fulfillment.
-  </p>
-</div>
-
+          <div className="card">🔌 Electronic Components Supply</div>
+          <div className="card">📐 PCB Design</div>
+          <div className="card">🏭 PCB Fabrication</div>
+          <div className="card">⚙️ PCB Assembly</div>
         </div>
       </section>
-{/* PCB Process Flow */}
-
-<section
-  style={{
-    padding: "50px 20px",
-    background: "#f8fafc",
-    textAlign: "center",
-  }}
->
-  <h2 style={{fontWeight:900,color:"#000"}}>
-  PCB Development Process
-</h2>
-
-  <p
-    style={{
-      maxWidth: "800px",
-      margin: "0 auto 40px",
-      lineHeight: "1.8",
-    }}
-  >
-    From concept to delivery, we provide complete PCB design,
-    fabrication and assembly solutions.
-  </p>
-
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
-      gap: "20px",
-      maxWidth: "1200px",
-      margin: "auto",
-    }}
-  >
-    <div className="card">
-      <h3>1️⃣ Requirement</h3>
-      <p>Understanding customer requirements.</p>
-    </div>
-<div className="card">
-  <h3>2️⃣ PCB Design</h3>
-  <p>Schematic and PCB layout design.</p>
-</div>
-
-<div className="card">
-  <h3>3️⃣ Fabrication</h3>
-  <p>PCB manufacturing and prototyping.</p>
-</div>
-
-<div className="card">
-  <h3>4️⃣ Assembly</h3>
-  <p>SMT and Through-Hole assembly.</p>
-</div>
-
-<div className="card">
-  <h3>5️⃣ Testing</h3>
-  <p>Quality inspection and validation.</p>
-</div>
-
-<div className="card">
-  <h3>6️⃣ Delivery</h3>
-  <p>Final product delivery and support.</p>
-</div>
-
-  </div>
-</section>
-{/* Request Quote Section */}
-
-<section
-  style={{
-    background: "#0284c7",
-    color: "white",
-    textAlign: "center",
-    padding: "70px 20px",
-  }}
->
-  <h2>Need PCB Design, Fabrication or Assembly Services?</h2>
-
-  <p
-    style={{
-      maxWidth: "700px",
-      margin: "20px auto",
-      lineHeight: "1.8",
-    }}
-  >
-    Get fast quotations for PCB Design, PCB Fabrication,
-    PCB Assembly and Electronic Components sourcing.
-  </p>
-
-<a
-href="https://wa.me/918123663810"
-target="_blank"
-style={{
-background: "#25D366",
-color: "white",
-padding: "15px 30px",
-borderRadius: "30px",
-textDecoration: "none",
-fontWeight: "bold",
-display: "inline-block",
-marginTop: "10px",
-}}
-
->
-
-💬 Request Quote on WhatsApp
-
-  </a>
-</section>
 
       {/* Products */}
       <section
         id="products"
-        style={{fontWeight:900,color:"#000",
+        style={{
           padding: "60px 40px",
         }}
       >
@@ -412,11 +227,11 @@ marginTop: "10px",
       </section>
 <section
   style={{
-    padding: "50px 20px",
+    padding: "80px 20px",
     background: "#ffffff",
   }}
 >
-  <h2 style={{fontWeight:900,color:"#000", textAlign: "center", marginBottom: "40px" }}>
+  <h2 style={{ textAlign: "center", marginBottom: "40px" }}>
     Why Choose Tesseract Electronics?
   </h2>
 
@@ -437,11 +252,95 @@ marginTop: "10px",
     <div className="card">✓ Technical Support & Consultation</div>
   </div>
 </section>
+      {/* Gallery */}
+      <section style={{ padding: "60px 40px" }}>
+        <h2 style={{ textAlign: "center" }}>Our Work</h2>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
+            gap: "20px",
+            marginTop: "30px",
+          }}
+        >
+          <img src="/pcb1.jpg" alt="PCB1" style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "12px" }} />
+          <img src="/pcb2.jpg" alt="PCB2" style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "12px" }} />
+          <img src="/pcb3.jpg" alt="PCB3" style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "12px" }} />
+          <img src="/pcb5.jpg" alt="PCB4" style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "12px" }} />
+        </div>
+      </section>
+
+      {/* Inquiry Form */}
+      <section style={{ padding: "60px 40px" }}>
+        <h2 style={{ textAlign: "center" }}>Inquiry Form</h2>
+
+        <form
+          action="https://formsubmit.co/tesseractelectronics24@gmail.com"
+          method="POST"
+          style={{
+            maxWidth: "600px",
+            margin: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: "15px",
+          }}
+        >
+          <input
+  type="hidden"
+  name="_next"
+  value="http://localhost:3000/thank-you"
+/>
+          <input
+  type="text"
+  name="name"
+  placeholder="Name"
+  required
+  style={{ padding: "12px" }}
+/>
+
+<input
+  type="tel"
+  name="mobile"
+  placeholder="Mobile Number"
+  required
+  style={{ padding: "12px" }}
+/>
+
+<input
+  type="email"
+  name="email"
+  placeholder="Email Address"
+  required
+  style={{ padding: "12px" }}
+/>
+
+<textarea
+  name="requirement"
+  placeholder="Your Requirement"
+  rows={5}
+  style={{ padding: "12px" }}
+/>
+
+          <button
+            type="submit"
+            style={{
+             background: "white",
+             padding: "40px",
+             borderRadius: "15px",
+             boxShadow: "0 5px 20px rgba(0,0,0,.1)",
+             cursor: "pointer",
+            }}
+          >
+            Submit Inquiry
+          </button>
+        </form>
+      </section>
 
       {/* Contact */}
       <section
         id="contact"
-        style={{fontWeight:900,color:"#000",
+        style={{
           padding: "60px 40px",
           textAlign: "center",
         }}
