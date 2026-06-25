@@ -1,3 +1,9 @@
+import {
+  CircuitBoard,
+  Package,
+  Factory,
+  Headphones,
+} from "lucide-react";
 export default function Home() {
   return (
     <main
@@ -120,7 +126,6 @@ backgroundPosition: "center", color: "white",
   We Deliver More Than Expected
 </p>
 {/* Company Statistics */}
-
 <section
   style={{
     padding: "60px 20px",
@@ -136,53 +141,88 @@ backgroundPosition: "center", color: "white",
       gap: "20px",
     }}
   >
+   <div
+  style={{
+    background: "white",
+    borderRadius: "12px",
+    padding: "25px",
+    textAlign: "center",
+  }}
+>
+  <CircuitBoard
+    size={40}
+    color="#0284c7"
+    style={{ marginBottom: "10px" }}
+  />
+
+  <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
+    1000+
+  </h2>
+
+  <p>PCB Projects Completed</p>
+</div>
     <div
-      style={{
-        background: "white",
-        borderRadius: "12px",
-        padding: "25px",
-        textAlign: "center",
-      }}
-    >
-      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>1000+</h2>
-      <p>PCB Projects Completed</p>
-    </div>
+  style={{
+    background: "white",
+    borderRadius: "12px",
+    padding: "25px",
+    textAlign: "center",
+  }}
+>
+  <Package
+    size={40}
+    color="#0284c7"
+    style={{ marginBottom: "10px" }}
+  />
+
+  <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
+    50k+
+  </h2>
+
+  <p>Components Supplied</p>
+</div>
 
     <div
-      style={{
-        background: "white",
-        borderRadius: "12px",
-        padding: "25px",
-        textAlign: "center",
-      }}
-    >
-      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>50K+</h2>
-      <p>Components Supplied</p>
-    </div>
+  style={{
+    background: "white",
+    borderRadius: "12px",
+    padding: "25px",
+    textAlign: "center",
+  }}
+>
+  <Factory
+    size={40}
+    color="#0284c7"
+    style={{ marginBottom: "10px" }}
+  />
+
+  <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
+    50+
+  </h2>
+
+  <p>Industries Served</p>
+</div>
 
     <div
-      style={{
-        background: "white",
-        borderRadius: "12px",
-        padding: "25px",
-        textAlign: "center",
-      }}
-    >
-      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>50+</h2>
-      <p>Industries Served</p>
-    </div>
+  style={{
+    background: "white",
+    borderRadius: "12px",
+    padding: "25px",
+    textAlign: "center",
+  }}
+>
+  <Headphones
+    size={40}
+    color="#0284c7"
+    style={{ marginBottom: "10px" }}
+  />
 
-    <div
-      style={{
-        background: "white",
-        borderRadius: "12px",
-        padding: "25px",
-        textAlign: "center",
-      }}
-    >
-      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>Pan India</h2>
-      <p>Customer Support</p>
-    </div>
+  <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
+    pan-India
+  </h2>
+
+  <p>Customer Support</p>
+</div>
   </div>
 </section>
       {/* About */}
