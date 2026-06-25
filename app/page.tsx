@@ -81,7 +81,7 @@ backgroundPosition: "center", color: "white",
     fontWeight: "400",
   }}
 >
-  Electronic Components | PCB Design | PCB Fabrication | PCB Assembly | BOM Fulfillment | Technical Support
+   PCB Design |PCB Fabrication | PCB Assembly | Component Sourcing | BOM Fulfillment | Technical Support
 </h3>
 
         <p
@@ -119,6 +119,7 @@ backgroundPosition: "center", color: "white",
 >
   We Deliver More Than Expected
 </p>
+
       {/* About */}
       <section
         style={{
@@ -141,11 +142,12 @@ backgroundPosition: "center", color: "white",
           customers with reliable and cost-effective electronics solutions.
         </p>
       </section>
+{/* Company Statistics */}
+
 <section
   style={{
     padding: "60px 20px",
     background: "#0f172a",
-    color: "white",
   }}
 >
   <div
@@ -153,14 +155,59 @@ backgroundPosition: "center", color: "white",
       maxWidth: "1200px",
       margin: "0 auto",
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))",
+      gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
       gap: "20px",
-      textAlign: "center",
     }}
   >
+    <div
+      style={{
+        background: "white",
+        borderRadius: "12px",
+        padding: "25px",
+        textAlign: "center",
+      }}
+    >
+      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>100+</h2>
+      <p>PCB Projects Completed</p>
+    </div>
+
+    <div
+      style={{
+        background: "white",
+        borderRadius: "12px",
+        padding: "25px",
+        textAlign: "center",
+      }}
+    >
+      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>50K+</h2>
+      <p>Components Supplied</p>
+    </div>
+
+    <div
+      style={{
+        background: "white",
+        borderRadius: "12px",
+        padding: "25px",
+        textAlign: "center",
+      }}
+    >
+      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>6+</h2>
+      <p>Industries Served</p>
+    </div>
+
+    <div
+      style={{
+        background: "white",
+        borderRadius: "12px",
+        padding: "25px",
+        textAlign: "center",
+      }}
+    >
+      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>Pan India</h2>
+      <p>Customer Support</p>
+    </div>
   </div>
-</section>
-<section
+</section><section
   style={{
     padding: "50px 20px",
     background: "#ffffff",
