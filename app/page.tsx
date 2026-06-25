@@ -175,7 +175,8 @@ backgroundPosition: "center", color: "white",
   <Package
     size={40}
     color="#0284c7"
-    style={{ marginBottom: "10px" }}
+    style={{ margin: "0 auto 15px auto",
+    display: "block", }}
   />
 
   <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
@@ -196,7 +197,8 @@ backgroundPosition: "center", color: "white",
   <Factory
     size={40}
     color="#0284c7"
-    style={{ marginBottom: "10px" }}
+    style={{ margin: "0 auto 15px auto",
+    display: "block", }}
   />
 
   <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
@@ -217,11 +219,12 @@ backgroundPosition: "center", color: "white",
   <Headphones
     size={40}
     color="#0284c7"
-    style={{ marginBottom: "10px" }}
+    style={{ margin: "0 auto 15px auto",
+    display: "block", }}
   />
 
   <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
-    pan-India
+    Pan-India
   </h2>
 
   <p>Customer Support</p>
