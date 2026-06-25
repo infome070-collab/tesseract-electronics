@@ -1,3 +1,4 @@
+<CircuitBoard size={80} color="red" />
 import {
   CircuitBoard,
   Package,
@@ -150,9 +151,11 @@ backgroundPosition: "center", color: "white",
   }}
 >
   <CircuitBoard
-    size={40}
-    color="#0284c7"
-    style={{ marginBottom: "10px" }}
+    size={50}
+  color="#0284c7"
+  style={{
+    margin: "0 auto 15px auto",
+    display: "block", }}
   />
 
   <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
