@@ -119,30 +119,7 @@ backgroundPosition: "center", color: "white",
 >
   We Deliver More Than Expected
 </p>
-
-      {/* About */}
-      <section
-        style={{
-          padding: "50px 20px",
-          textAlign: "center",
-        }}
-      >
-        <h2>About Tesseract Electronics</h2>
-
-        <p
-          style={{
-            maxWidth: "900px",
-            margin: "auto",
-            lineHeight: "1.8",
-          }}
-        >
-          Tesseract Electronics is a Bengaluru-based supplier of electronic
-          components and provider of PCB Design, PCB Fabrication and PCB
-          Assembly services. We support startups, R&D teams and industrial
-          customers with reliable and cost-effective electronics solutions.
-        </p>
-      </section>
-{/* Company Statistics */}
+/* Company Statistics */
 
 <section
   style={{
@@ -167,7 +144,7 @@ backgroundPosition: "center", color: "white",
         textAlign: "center",
       }}
     >
-      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>100+</h2>
+      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>1000+</h2>
       <p>PCB Projects Completed</p>
     </div>
 
@@ -191,7 +168,7 @@ backgroundPosition: "center", color: "white",
         textAlign: "center",
       }}
     >
-      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>6+</h2>
+      <h2 style={{ color: "#0284c7", fontSize: "36px" }}>50+</h2>
       <p>Industries Served</p>
     </div>
 
@@ -207,7 +184,30 @@ backgroundPosition: "center", color: "white",
       <p>Customer Support</p>
     </div>
   </div>
-</section><section
+</section>
+      {/* About */}
+      <section
+        style={{
+          padding: "50px 20px",
+          textAlign: "center",
+        }}
+      >
+        <h2>About Tesseract Electronics</h2>
+
+        <p
+          style={{
+            maxWidth: "900px",
+            margin: "auto",
+            lineHeight: "1.8",
+          }}
+        >
+          Tesseract Electronics is a Bengaluru-based supplier of electronic
+          components and provider of PCB Design, PCB Fabrication and PCB
+          Assembly services. We support startups, R&D teams and industrial
+          customers with reliable and cost-effective electronics solutions.
+        </p>
+      </section>
+{<section
   style={{
     padding: "50px 20px",
     background: "#ffffff",
@@ -270,7 +270,7 @@ backgroundPosition: "center", color: "white",
   </div>
 </div>
 </section>
-      {/* Services */}
+      /* Services */}
       <section
         id="services"
         style={{fontWeight:900,color:"#000",
