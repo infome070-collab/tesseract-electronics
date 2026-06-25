@@ -111,7 +111,7 @@ backgroundPosition: "center", color: "white",
       </section>
       <p
   style={{
-    color: "#dcfce7",
+    color: "#0284c7",
     fontSize: "22px",
     fontWeight: "bold",
     margin: "15px 0",
@@ -119,7 +119,7 @@ backgroundPosition: "center", color: "white",
 >
   We Deliver More Than Expected
 </p>
-/* Company Statistics */
+{/* Company Statistics */}
 
 <section
   style={{
