@@ -723,7 +723,7 @@ marginTop: "10px",
      <input
   type="hidden"
   name="_next"
-  value="http://localhost:3000/thank-you"
+  value="https://tesseract-electronics.vercel.app/thank-you"
 />
       <input
         type="text"
