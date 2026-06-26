@@ -5,6 +5,13 @@ import {
   Factory,
   Headphones,
 } from "lucide-react";
+const inputStyle = {
+  padding: "14px",
+  border: "1px solid #d1d5db",
+  borderRadius: "8px",
+  fontSize: "15px",
+  outline: "none",
+};
 export default function Home() {
   return (
     <main
@@ -653,7 +660,140 @@ marginTop: "10px",
       >
         © 2026 Tesseract Electronics. All Rights Reserved.
       </footer>
+{/* Inquiry Form */}
 
+<section
+  style={{
+    padding: "70px 20px",
+    background: "#f8fafc",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "700px",
+      margin: "0 auto",
+    }}
+  >
+    <h2
+      style={{
+        textAlign: "center",
+        fontSize: "2.5rem",
+        color: "#0f172a",
+        marginBottom: "10px",
+      }}
+    >
+      Request a Quote
+    </h2>
+
+    <p
+      style={{
+        textAlign: "center",
+        color: "#555",
+        marginBottom: "35px",
+      }}
+    >
+      Tell us about your PCB or electronic component requirement.
+      We'll get back to you as soon as possible.
+    </p>
+
+    <form
+      action="https://formsubmit.co/tesseractelectronics24@gmail.com"
+      method="POST"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "18px",
+        background: "#ffffff",
+        padding: "35px",
+        borderRadius: "12px",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
+      }}
+    >
+      {/* Disable CAPTCHA */}
+      <input type="hidden" name="_captcha" value="false" />
+
+      {/* Subject */}
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Website Enquiry - Tesseract Electronics"
+      />
+
+      {/* Thank You Page */}
+     <input
+  type="hidden"
+  name="_next"
+  value="http://localhost:3000/thank-you"
+/>
+      <input
+        type="text"
+        name="Name"
+        placeholder="Full Name"
+        required
+        style={inputStyle}
+      />
+
+      <input
+        type="text"
+        name="Company"
+        placeholder="Company Name"
+        style={inputStyle}
+      />
+
+      <input
+        type="email"
+        name="Email"
+        placeholder="Email Address"
+        required
+        style={inputStyle}
+      />
+
+      <input
+        type="tel"
+        name="Phone"
+        placeholder="Phone Number"
+        required
+        style={inputStyle}
+      />
+
+      <select
+        name="Service"
+        style={inputStyle}
+      >
+        <option>PCB Design</option>
+        <option>PCB Fabrication</option>
+        <option>PCB Assembly</option>
+        <option>Component Sourcing</option>
+        <option>BOM Fulfillment</option>
+        <option>Other</option>
+      </select>
+
+      <textarea
+        name="Requirement"
+        rows={5}
+        placeholder="Describe your requirement..."
+        required
+        style={inputStyle}
+      />
+
+      <button
+        type="submit"
+        style={{
+          background: "#0284c7",
+          color: "white",
+          padding: "15px",
+          border: "none",
+          borderRadius: "8px",
+          fontSize: "16px",
+          cursor: "pointer",
+          fontWeight: "bold",
+        }}
+      >
+        Submit Enquiry
+      </button>
+    </form>
+  </div>
+</section>
       {/* Floating WhatsApp */}
       <a
         href="https://wa.me/918123663810"
