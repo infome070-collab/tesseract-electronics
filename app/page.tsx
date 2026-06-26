@@ -231,6 +231,62 @@ backgroundPosition: "center", color: "white",
 </div>
   </div>
 </section>
+  {/* Trusted Brands */}
+
+<section
+  style={{
+    padding: "70px 20px",
+    background: "#ffffff",
+    textAlign: "center",
+  }}
+>
+  <h2
+    style={{
+      fontSize: "2.5rem",
+      fontWeight: "bold",
+      color: "#000",
+      marginBottom: "15px",
+    }}
+  >
+    Trusted Component Brands
+  </h2>
+
+  <p
+    style={{
+      color: "#555",
+      marginBottom: "40px",
+      maxWidth: "700px",
+      margin: "0 auto 40px",
+      lineHeight: "1.8",
+    }}
+  >
+    We source genuine electronic components from globally recognized
+    semiconductor and electronics manufacturers.
+  </p>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+      gap: "20px",
+      maxWidth: "1200px",
+      margin: "auto",
+    }}
+  >
+    <div className="card">Texas Instruments</div>
+    <div className="card">STMicroelectronics</div>
+    <div className="card">Microchip</div>
+    <div className="card">NXP Semiconductors</div>
+    <div className="card">Analog Devices</div>
+    <div className="card">Vishay</div>
+    <div className="card">Omron</div>
+    <div className="card">Panasonic</div>
+    <div className="card">Infineon</div>
+    <div className="card">Renesas</div>
+    <div className="card">TE Connectivity</div>
+    <div className="card">Molex</div>
+  </div>
+</section>   
       {/* About */}
       <section
         style={{
