@@ -1,35 +1,52 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+export const metadata: Metadata = {
+  title: "Tesseract Electronics | PCB Design, PCB Assembly & Electronic Components",
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata = {
-  title: "Tesseract Electronics | Electronic Components & PCB Solutions",
   description:
-    "Electronic Components, PCB Design, PCB Fabrication and PCB Assembly Services in Bengaluru.",
+    "Tesseract Electronics is a Bengaluru-based provider of PCB Design, PCB Fabrication, PCB Assembly, Electronic Components, BOM Fulfillment and Technical Support across India.",
+
+  keywords: [
+    "PCB Design Bangalore",
+    "PCB Fabrication",
+    "PCB Assembly",
+    "Electronic Components",
+    "BOM Fulfillment",
+    "PCB Manufacturer India",
+    "SMT Assembly",
+    "Through Hole Assembly",
+    "Industrial Electronics",
+    "Tesseract Electronics",
+  ],
+
+  authors: [{ name: "Tesseract Electronics" }],
+
+  creator: "Tesseract Electronics",
+
+  publisher: "Tesseract Electronics",
+
+  metadataBase: new URL("https://tesseractelectronics.online"),
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Tesseract Electronics",
+    description:
+      "PCB Design | PCB Fabrication | PCB Assembly | Electronic Components",
+
+    url: "https://tesseractelectronics.online",
+
+    siteName: "Tesseract Electronics",
+
+    locale: "en_IN",
+
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-  <html
-    lang="en"
-    className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-  >
-    <body>
-      {children}
-    </body>
-  </html>
-);
-}
