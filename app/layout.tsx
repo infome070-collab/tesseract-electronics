@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Tesseract Electronics | PCB Design, PCB Assembly & Electronic Components",
+  title:
+    "Tesseract Electronics | PCB Design, PCB Assembly & Electronic Components",
 
   description:
     "Tesseract Electronics is a Bengaluru-based provider of PCB Design, PCB Fabrication, PCB Assembly, Electronic Components, BOM Fulfillment and Technical Support across India.",
@@ -20,9 +22,7 @@ export const metadata: Metadata = {
   ],
 
   authors: [{ name: "Tesseract Electronics" }],
-
   creator: "Tesseract Electronics",
-
   publisher: "Tesseract Electronics",
 
   metadataBase: new URL("https://tesseractelectronics.online"),
@@ -35,13 +35,9 @@ export const metadata: Metadata = {
     title: "Tesseract Electronics",
     description:
       "PCB Design | PCB Fabrication | PCB Assembly | Electronic Components",
-
     url: "https://tesseractelectronics.online",
-
     siteName: "Tesseract Electronics",
-
     locale: "en_IN",
-
     type: "website",
   },
 
@@ -50,3 +46,15 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
