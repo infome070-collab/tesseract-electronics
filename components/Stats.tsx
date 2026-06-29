@@ -2,7 +2,6 @@
 
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import FadeIn from "./ui/FadeIn";
 import { CircuitBoard, Package, Users, Headphones } from "lucide-react";
 
 const stats = [
@@ -38,22 +37,22 @@ export default function Stats() {
     threshold: 0.3,
   });
 
-  return (
-    <section
-      ref={ref}
-      className="bg-sky-700 py-20 text-white"
-    >
-      <div className="mx-auto max-w-7xl px-6">
+ return (
+  <section
+    ref={ref}
+    className="bg-sky-700 py-20 text-white"
+  >
+    <div className="mx-auto max-w-7xl px-6">
 
-        <div className="mb-14 text-center">
-          <h2 className="text-4xl font-bold">
-            Company Highlights
-          </h2>
+      <div className="mb-14 text-center">
+        <h2 className="text-4xl font-bold">
+          Company Highlights
+        </h2>
 
-          <p className="mt-4 text-lg text-sky-100">
-            Delivering quality PCB solutions and electronic components across India.
-          </p>
-        </div>
+        <p className="mt-4 text-lg text-sky-100">
+          Delivering quality PCB solutions and electronic components across India.
+        </p>
+      </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 
