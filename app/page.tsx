@@ -8,6 +8,7 @@ import Brands from "@/components/Brands";
 import Industries from "@/components/Industries";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <About />
       <Stats />
+     <WhyChooseUs />
       <Services />
       <Products />
       <Brands />

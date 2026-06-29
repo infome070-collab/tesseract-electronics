@@ -1,33 +1,48 @@
 "use client";
 
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import FadeIn from "./ui/FadeIn";
 import { CircuitBoard, Package, Users, Headphones } from "lucide-react";
 
 const stats = [
   {
     icon: CircuitBoard,
-    number: "100+",
+    end: 100,
+    suffix: "+",
     title: "PCB Projects",
   },
   {
     icon: Package,
-    number: "10,000+",
+    end: 10000,
+    suffix: "+",
     title: "Electronic Components",
   },
   {
     icon: Users,
-    number: "25+",
+    end: 25,
+    suffix: "+",
     title: "Industry Partners",
   },
   {
     icon: Headphones,
-    number: "24/7",
+    end: 24,
+    suffix: "/7",
     title: "Technical Support",
   },
 ];
 
 export default function Stats() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   return (
-    <section className="bg-sky-700 py-20 text-white">
+    <section
+      ref={ref}
+      className="bg-sky-700 py-20 text-white"
+    >
       <div className="mx-auto max-w-7xl px-6">
 
         <div className="mb-14 text-center">
@@ -41,29 +56,39 @@ export default function Stats() {
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
           {stats.map((item, index) => {
             const Icon = item.icon;
 
             return (
-              <div
-                key={index}
-                className="rounded-xl bg-white p-8 text-center shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
-              >
-                <Icon
-                  className="mx-auto mb-5 text-sky-600"
-                  size={48}
-                />
+              <div key={index}>
+                <div className="rounded-xl bg-white p-8 text-center shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
-                <h3 className="text-4xl font-bold text-sky-700">
-                  {item.number}
-                </h3>
+                  <Icon
+                    className="mx-auto mb-5 text-sky-600"
+                    size={48}
+                  />
 
-                <p className="mt-3 text-lg font-medium text-gray-700">
-                  {item.title}
-                </p>
+                  <h3 className="text-4xl font-bold text-sky-700">
+                    {inView && (
+                      <CountUp
+                        end={item.end}
+                        duration={2}
+                        separator=","
+                        suffix={item.suffix}
+                      />
+                    )}
+                  </h3>
+
+                  <p className="mt-3 text-lg font-medium text-gray-700">
+                    {item.title}
+                  </p>
+
+                </div>
               </div>
             );
           })}
+
         </div>
 
       </div>
