@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Stats from "@/components/Stats";
 import Services from "@/components/Services";
 import Products from "@/components/Products";
 import Brands from "@/components/Brands";
@@ -10,16 +11,17 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-      <>
-        <Header />
-        <Hero />
-        <About />
-        <Services />
-        <Products />
-        <Brands />
-        <Industries />
-        <Contact />
-        <Footer />
-    </>
+    <main className="bg-slate-50">
+      <Header />
+      <Hero />
+      <About />
+      <Stats />
+      <Services />
+      <Products />
+      <Brands />
+      <Industries />
+      <Contact />
+      <Footer />
+    </main>
   );
 }
