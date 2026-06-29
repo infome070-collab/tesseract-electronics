@@ -1,121 +1,209 @@
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+"use client";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import {
+  CircuitBoard,
+  Package,
+  Factory,
+  Headphones,
+} from "lucide-react";
+const inputStyle = {
+  padding: "14px",
+  border: "1px solid #d1d5db",
+  borderRadius: "8px",
+  fontSize: "15px",
+  outline: "none",
+};
 export default function Home() {
   return (
     <main
       style={{
         fontFamily: "Arial, sans-serif",
-        backgroundColor: "#f8fbff",
+        backgroundColor: "#f8ffff",
         minHeight: "100vh",
       }}
     >
-      {/* Header */}
-      <nav
-        style={{
-          background: "linear-gradient(135deg,#0f172a,#1e293b)",
-          color: "white",
-          padding: "15px 40px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          position: "sticky",
-          top: 0,
-          zIndex: 1000,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-  <img
-    src="/favicon.png"
-    alt="Logo"
-    style={{ width: "45px", height: "45px" }}
+      <Header />
+      <Hero />
+      <About />
+      <p
+  style={{
+    color: "#0284c7",
+    fontSize: "22px",
+    fontWeight: "bold",
+    margin: "15px 0",
+  }}
+>
+  We Deliver More Than Expected
+</p>
+{/* Company Statistics */}
+<section
+  style={{
+    padding: "60px 20px",
+    background: "#0f172a",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "1200px",
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
+      gap: "20px",
+    }}
+  >
+   <div
+  style={{
+    background: "white",
+    borderRadius: "12px",
+    padding: "25px",
+    textAlign: "center",
+  }}
+>
+  <CircuitBoard
+    size={50}
+  color="#0284c7"
+  style={{
+    margin: "0 auto 15px auto",
+    display: "block", }}
   />
-  <h2>Tesseract Electronics</h2>
+
+  <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
+    1000+
+  </h2>
+
+  <p>PCB Projects Completed</p>
+</div>
+    <div
+  style={{
+    background: "white",
+    borderRadius: "12px",
+    padding: "25px",
+    textAlign: "center",
+  }}
+>
+  <Package
+    size={40}
+    color="#0284c7"
+    style={{ margin: "0 auto 15px auto",
+    display: "block", }}
+  />
+
+  <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
+    50k+
+  </h2>
+
+  <p>Components Supplied</p>
 </div>
 
-        <div>
-          <a
-            href="#services"
-            style={{ color: "white", marginRight: "20px", textDecoration: "none" }}
-          >
-            Services
-          </a>
-
-          <a
-            href="#products"
-            style={{ color: "white", marginRight: "20px", textDecoration: "none" }}
-          >
-            Products
-          </a>
-
-          <a
-            href="#contact"
-            style={{ color: "white", textDecoration: "none" }}
-          >
-            Contact
-          </a>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section
-        style={{
- background:
-"linear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.85)),url('/pcb bg1.jpg')",
-backgroundSize: "cover",
-backgroundPosition: "center",
-  color: "white",
-  textAlign: "center",
-  padding: "140px 20px",
-}}
-      >
-        <h1
+    <div
   style={{
-    fontSize: "56px",
-    fontWeight: "bold",
-    marginBottom: "20px",
+    background: "white",
+    borderRadius: "12px",
+    padding: "25px",
+    textAlign: "center",
   }}
 >
-  Tesseract Electronics
-</h1>
+  <Factory
+    size={40}
+    color="#0284c7"
+    style={{ margin: "0 auto 15px auto",
+    display: "block", }}
+  />
 
-        <h3
+  <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
+    50+
+  </h2>
+
+  <p>Industries Served</p>
+</div>
+
+    <div
   style={{
-    fontSize: "24px",
-    fontWeight: "400",
+    background: "white",
+    borderRadius: "12px",
+    padding: "25px",
+    textAlign: "center",
   }}
 >
-  Electronic Components | PCB Design | PCB Fabrication | PCB Assembly
-</h3>
+  <Headphones
+    size={40}
+    color="#0284c7"
+    style={{ margin: "0 auto 15px auto",
+    display: "block", }}
+  />
 
-        <p
-          style={{
-            maxWidth: "800px",
-            margin: "25px auto",
-            lineHeight: "1.8",
-          }}
-        >
-          Trusted supplier of electronic components and PCB solutions for
-          startups, R&D teams and industrial customers.
-        </p>
+  <h2 style={{ color: "#0284c7", fontSize: "36px" }}>
+    Pan-India
+  </h2>
 
-        <a
-          href="https://wa.me/918123663810"
-          target="_blank"
-          style={{
-            background: "#25D366",
-            color: "white",
-            padding: "15px 30px",
-            borderRadius: "40px",
-            textDecoration: "none",
-            fontWeight: "bold",
-          }}
-        >
-          💬 Get Quote on WhatsApp
-        </a>
-      </section>
+  <p>Customer Support</p>
+</div>
+  </div>
+</section>
+  {/* Trusted Brands */}
 
+<section
+  style={{
+    padding: "70px 20px",
+    background: "#ffffff",
+    textAlign: "center",
+  }}
+>
+  <h2
+    style={{
+      fontSize: "2.5rem",
+      fontWeight: "bold",
+      color: "#000",
+      marginBottom: "15px",
+    }}
+  >
+    Trusted Component Brands
+  </h2>
+
+  <p
+    style={{
+      color: "#555",
+      marginBottom: "40px",
+      maxWidth: "700px",
+      margin: "0 auto 40px",
+      lineHeight: "1.8",
+    }}
+  >
+    We source genuine electronic components from globally recognized
+    semiconductor and electronics manufacturers.
+  </p>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+      gap: "20px",
+      maxWidth: "1200px",
+      margin: "auto",
+    }}
+  >
+    <div className="card">Texas Instruments</div>
+    <div className="card">STMicroelectronics</div>
+    <div className="card">Microchip</div>
+    <div className="card">NXP Semiconductors</div>
+    <div className="card">Analog Devices</div>
+    <div className="card">Vishay</div>
+    <div className="card">Omron</div>
+    <div className="card">Panasonic</div>
+    <div className="card">Infineon</div>
+    <div className="card">Renesas</div>
+    <div className="card">TE Connectivity</div>
+    <div className="card">Molex</div>
+  </div>
+</section>   
       {/* About */}
       <section
         style={{
-          padding: "180px 20px",
+          padding: "50px 20px",
           textAlign: "center",
         }}
       >
@@ -134,45 +222,73 @@ backgroundPosition: "center",
           customers with reliable and cost-effective electronics solutions.
         </p>
       </section>
-<section
+{<section
   style={{
-    padding: "60px 20px",
-    background: "#0f172a",
-    color: "white",
+    padding: "50px 20px",
+    background: "#ffffff",
   }}
 >
-  <div
+  <h2
     style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))",
-      gap: "20px",
       textAlign: "center",
+      fontWeight: "1000",
+      fontSize: "2.5rem",
+      color: "#000",
+      marginBottom: "15px",
     }}
   >
-    <div className="card">
-      <h2>10000+</h2>
-      <p>Electronic Components Supplied</p>
-    </div>
+  Industries We Serve
+  </h2>
+  <p
+    style={{
+      textAlign: "center",
+      maxWidth: "800px",
+      margin: "0 auto 40px",
+      lineHeight: "1.8",
+    }}
+  >
+    Providing PCB Design, Fabrication, Assembly and Component Sourcing
+    Solutions for Diverse Industries.
+  </p>
 
-    <div className="card">
-      <h2>1000+</h2>
-      <p>PCB Projects Supported</p>
-    </div>
-
-    <div className="card">
-      <h2>50+</h2>
-      <p>Happy Customers</p>
-  
-    </div>
+ <div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
+    gap: "20px",
+    maxWidth: "1200px",
+    margin: "auto",
+  }}
+>
+  <div className="card">
+    <h3>🏭 Industrial Automation</h3>
   </div>
-</section>
 
-      {/* Services */}
+  <div className="card">
+    <h3>⚖️ Weighing Scale Manufacturing</h3>
+  </div>
+
+  <div className="card">
+    <h3>🌐 IoT & Embedded Systems</h3>
+  </div>
+
+  <div className="card">
+    <h3>🏥 Medical Electronics</h3>
+  </div>
+
+  <div className="card">
+    <h3>🚗 Automotive Electronics</h3>
+  </div>
+
+  <div className="card">
+    <h3>🔬 Research & Development</h3>
+  </div>
+</div>
+</section>
+      /* Services */}
       <section
         id="services"
-        style={{
+        style={{fontWeight:900,color:"#000",
           padding: "60px 40px",
           background: "#f8fafc",
         }}
@@ -187,17 +303,148 @@ backgroundPosition: "center",
             marginTop: "30px",
           }}
         >
-          <div className="card">🔌 Electronic Components Supply</div>
-          <div className="card">📐 PCB Design</div>
-          <div className="card">🏭 PCB Fabrication</div>
-          <div className="card">⚙️ PCB Assembly</div>
+          <div className="card">
+  <h3>📐 PCB Design</h3>
+  <p>
+    Schematic design, PCB layout, multilayer board design and prototype support.
+  </p>
+</div>
+
+<div className="card">
+  <h3>🏭 PCB Fabrication</h3>
+  <p>
+    High-quality prototype and production PCB manufacturing with fast turnaround.
+  </p>
+</div>
+
+<div className="card">
+  <h3>⚙️ PCB Assembly</h3>
+  <p>
+    SMT and Through-Hole assembly services
+  </p>
+</div>
+
+<div className="card">
+  <h3>🔌 Electronic Components</h3>
+  <p>
+    Reliable sourcing of ICs, connectors, sensors, relays and BOM fulfillment.
+  </p>
+</div>
+
         </div>
       </section>
+{/* PCB Process Flow */}
+
+<section
+  style={{
+    padding: "50px 20px",
+    background: "#f8fafc",
+    textAlign: "center",
+  }}
+>
+  <h2 style={{fontWeight:900,color:"#000"}}>
+  PCB Development Process
+</h2>
+
+  <p
+    style={{
+      maxWidth: "800px",
+      margin: "0 auto 40px",
+      lineHeight: "1.8",
+    }}
+  >
+    From concept to delivery, we provide complete PCB design,
+    fabrication and assembly solutions.
+  </p>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+      gap: "20px",
+      maxWidth: "1200px",
+      margin: "auto",
+    }}
+  >
+    <div className="card">
+      <h3>1️⃣ Requirement</h3>
+      <p>Understanding customer requirements.</p>
+    </div>
+<div className="card">
+  <h3>2️⃣ PCB Design</h3>
+  <p>Schematic and PCB layout design.</p>
+</div>
+
+<div className="card">
+  <h3>3️⃣ Fabrication</h3>
+  <p>PCB manufacturing and prototyping.</p>
+</div>
+
+<div className="card">
+  <h3>4️⃣ Assembly</h3>
+  <p>SMT and Through-Hole assembly.</p>
+</div>
+
+<div className="card">
+  <h3>5️⃣ Testing</h3>
+  <p>Quality inspection and validation.</p>
+</div>
+
+<div className="card">
+  <h3>6️⃣ Delivery</h3>
+  <p>Final product delivery and support.</p>
+</div>
+
+  </div>
+</section>
+{/* Request Quote Section */}
+
+<section
+  style={{
+    background: "#0284c7",
+    color: "white",
+    textAlign: "center",
+    padding: "70px 20px",
+  }}
+>
+  <h2>Need PCB Design, Fabrication or Assembly Services?</h2>
+
+  <p
+    style={{
+      maxWidth: "700px",
+      margin: "20px auto",
+      lineHeight: "1.8",
+    }}
+  >
+    Get fast quotations for PCB Design, PCB Fabrication,
+    PCB Assembly and Electronic Components sourcing.
+  </p>
+
+<a
+href="https://wa.me/918123663810"
+target="_blank"
+style={{
+background: "#25D366",
+color: "white",
+padding: "15px 30px",
+borderRadius: "30px",
+textDecoration: "none",
+fontWeight: "bold",
+display: "inline-block",
+marginTop: "10px",
+}}
+
+>
+
+💬 Request Quote on WhatsApp
+
+  </a>
+</section>
 
       {/* Products */}
       <section
         id="products"
-        style={{
+        style={{fontWeight:900,color:"#000",
           padding: "60px 40px",
         }}
       >
@@ -227,11 +474,11 @@ backgroundPosition: "center",
       </section>
 <section
   style={{
-    padding: "80px 20px",
+    padding: "50px 20px",
     background: "#ffffff",
   }}
 >
-  <h2 style={{ textAlign: "center", marginBottom: "40px" }}>
+  <h2 style={{fontWeight:900,color:"#000", textAlign: "center", marginBottom: "40px" }}>
     Why Choose Tesseract Electronics?
   </h2>
 
@@ -252,95 +499,11 @@ backgroundPosition: "center",
     <div className="card">✓ Technical Support & Consultation</div>
   </div>
 </section>
-      {/* Gallery */}
-      <section style={{ padding: "60px 40px" }}>
-        <h2 style={{ textAlign: "center" }}>Our Work</h2>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-            gap: "20px",
-            marginTop: "30px",
-          }}
-        >
-          <img src="/pcb1.jpg" alt="PCB1" style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "12px" }} />
-          <img src="/pcb2.jpg" alt="PCB2" style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "12px" }} />
-          <img src="/pcb3.jpg" alt="PCB3" style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "12px" }} />
-          <img src="/pcb5.jpg" alt="PCB4" style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "12px" }} />
-        </div>
-      </section>
-
-      {/* Inquiry Form */}
-      <section style={{ padding: "60px 40px" }}>
-        <h2 style={{ textAlign: "center" }}>Inquiry Form</h2>
-
-        <form
-          action="https://formsubmit.co/tesseractelectronics24@gmail.com"
-          method="POST"
-          style={{
-            maxWidth: "600px",
-            margin: "auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-          }}
-        >
-          <input
-  type="hidden"
-  name="_next"
-  value="http://localhost:3000/thank-you"
-/>
-          <input
-  type="text"
-  name="name"
-  placeholder="Name"
-  required
-  style={{ padding: "12px" }}
-/>
-
-<input
-  type="tel"
-  name="mobile"
-  placeholder="Mobile Number"
-  required
-  style={{ padding: "12px" }}
-/>
-
-<input
-  type="email"
-  name="email"
-  placeholder="Email Address"
-  required
-  style={{ padding: "12px" }}
-/>
-
-<textarea
-  name="requirement"
-  placeholder="Your Requirement"
-  rows={5}
-  style={{ padding: "12px" }}
-/>
-
-          <button
-            type="submit"
-            style={{
-             background: "white",
-             padding: "40px",
-             borderRadius: "15px",
-             boxShadow: "0 5px 20px rgba(0,0,0,.1)",
-             cursor: "pointer",
-            }}
-          >
-            Submit Inquiry
-          </button>
-        </form>
-      </section>
 
       {/* Contact */}
       <section
         id="contact"
-        style={{
+        style={{fontWeight:900,color:"#000",
           padding: "60px 40px",
           textAlign: "center",
         }}
@@ -403,7 +566,140 @@ backgroundPosition: "center",
       >
         © 2026 Tesseract Electronics. All Rights Reserved.
       </footer>
+{/* Inquiry Form */}
 
+<section
+  style={{
+    padding: "70px 20px",
+    background: "#f8fafc",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "700px",
+      margin: "0 auto",
+    }}
+  >
+    <h2
+      style={{
+        textAlign: "center",
+        fontSize: "2.5rem",
+        color: "#0f172a",
+        marginBottom: "10px",
+      }}
+    >
+      Request a Quote
+    </h2>
+
+    <p
+      style={{
+        textAlign: "center",
+        color: "#555",
+        marginBottom: "35px",
+      }}
+    >
+      Tell us about your PCB or electronic component requirement.
+      We'll get back to you as soon as possible.
+    </p>
+
+    <form
+      action="https://formsubmit.co/tesseractelectronics24@gmail.com"
+      method="POST"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "18px",
+        background: "#ffffff",
+        padding: "35px",
+        borderRadius: "12px",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
+      }}
+    >
+      {/* Disable CAPTCHA */}
+      <input type="hidden" name="_captcha" value="false" />
+
+      {/* Subject */}
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Website Enquiry - Tesseract Electronics"
+      />
+
+      {/* Thank You Page */}
+     <input
+  type="hidden"
+  name="_next"
+  value="https://tesseractelectronics.online/thank-you"
+/>
+      <input
+        type="text"
+        name="Name"
+        placeholder="Full Name"
+        required
+        style={inputStyle}
+      />
+
+      <input
+        type="text"
+        name="Company"
+        placeholder="Company Name"
+        style={inputStyle}
+      />
+
+      <input
+        type="email"
+        name="Email"
+        placeholder="Email Address"
+        required
+        style={inputStyle}
+      />
+
+      <input
+        type="tel"
+        name="Phone"
+        placeholder="Phone Number"
+        required
+        style={inputStyle}
+      />
+
+      <select
+        name="Service"
+        style={inputStyle}
+      >
+        <option>PCB Design</option>
+        <option>PCB Fabrication</option>
+        <option>PCB Assembly</option>
+        <option>Component Sourcing</option>
+        <option>BOM Fulfillment</option>
+        <option>Other</option>
+      </select>
+
+      <textarea
+        name="Requirement"
+        rows={5}
+        placeholder="Describe your requirement..."
+        required
+        style={inputStyle}
+      />
+
+      <button
+        type="submit"
+        style={{
+          background: "#0284c7",
+          color: "white",
+          padding: "15px",
+          border: "none",
+          borderRadius: "8px",
+          fontSize: "16px",
+          cursor: "pointer",
+          fontWeight: "bold",
+        }}
+      >
+        Submit Enquiry
+      </button>
+    </form>
+  </div>
+</section>
       {/* Floating WhatsApp */}
       <a
         href="https://wa.me/918123663810"
