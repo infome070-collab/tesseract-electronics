@@ -18,7 +18,7 @@ export default function About() {
       >
         <div>
           <img
-            src="/pcb1.jpg"
+            src="/pcb bg1.jpg"
             alt="PCB Design"
             style={{
               width: "100%",

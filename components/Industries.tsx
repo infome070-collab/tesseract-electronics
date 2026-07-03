@@ -32,6 +32,10 @@ const industries = [
     icon: <Zap size={42} />,
     title: "Power Electronics",
   },
+  {
+    icon: <Zap size={42} />,
+    title: "Energy Sector",
+  },
 ];
 
 export default function Industries() {

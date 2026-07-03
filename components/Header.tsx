@@ -30,7 +30,10 @@ export default function Header() {
             </h1>
 
             <p className="text-xs text-sky-100">
-              PCB • Assembly • Components
+              PCB Design • Fabrication • Assembly • Components Sourcing
+            </p>
+            <p className="text-xs text-sky-100">
+              "We Deliver More than Expected"
             </p>
           </div>
         </div>

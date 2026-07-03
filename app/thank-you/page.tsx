@@ -38,7 +38,7 @@ export default function ThankYou() {
           marginBottom: "30px",
         }}
       >
-        Our team will contact you shortly.
+        Our team will contact you shortly. "We Delivers More than Expected"
       </p>
 
       <a

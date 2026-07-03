@@ -4,19 +4,20 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title:
-    "Tesseract Electronics | PCB Design, PCB Assembly & Electronic Components",
+    "Tesseract Electronics | PCB Design | PCB Fabrication | PCB Assembly | Electronic Components Sourcing",
 
   description:
     "Tesseract Electronics is a Bengaluru-based provider of PCB Design, PCB Fabrication, PCB Assembly, Electronic Components, BOM Fulfillment and Technical Support across India.",
 
   keywords: [
     "PCB Design Bangalore",
-    "PCB Fabrication",
+    "PCB Fabrication Bangalore",
     "PCB Assembly",
-    "Electronic Components",
+    "Electronic Components Bangalore",
     "BOM Fulfillment",
     "PCB Manufacturer India",
-    "SMT Assembly",
+    "PCB Manufacturer Bangalore",
+    "SMT Assembly Bangalore",
     "Through Hole Assembly",
     "Industrial Electronics",
     "Tesseract Electronics",

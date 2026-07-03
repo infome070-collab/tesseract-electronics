@@ -7,7 +7,7 @@ import { CircuitBoard, Package, Users, Headphones } from "lucide-react";
 const stats = [
   {
     icon: CircuitBoard,
-    end: 100,
+    end: 1000,
     suffix: "+",
     title: "PCB Projects",
   },
@@ -19,16 +19,11 @@ const stats = [
   },
   {
     icon: Users,
-    end: 25,
+    end: 50,
     suffix: "+",
     title: "Industry Partners",
   },
-  {
-    icon: Headphones,
-    end: 24,
-    suffix: "/7",
-    title: "Technical Support",
-  },
+
 ];
 
 export default function Stats() {
@@ -42,7 +37,7 @@ export default function Stats() {
     ref={ref}
     className="bg-sky-700 py-20 text-white"
   >
-    <div className="mx-auto max-w-7xl px-6">
+    <div className="mx-auto max-w-7xl px-1">
 
       <div className="mb-14 text-center">
         <h2 className="text-4xl font-bold">
@@ -61,11 +56,11 @@ export default function Stats() {
 
             return (
               <div key={index}>
-                <div className="rounded-xl bg-white p-8 text-center shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="rounded-xl bg-white p-8 text-center shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-4xl">
 
                   <Icon
-                    className="mx-auto mb-5 text-sky-600"
-                    size={48}
+                    className="mx-auto mb-4 text-sky-600"
+                    size={50}
                   />
 
                   <h3 className="text-4xl font-bold text-sky-700">
