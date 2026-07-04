@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   creator: "Tesseract Electronics",
   publisher: "Tesseract Electronics",
 
-  metadataBase: new URL("https://tesseractelectronics.online"),
+ metadataBase: new URL("https://tesseractelectronics.online"),
 
   alternates: {
     canonical: "/",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Tesseract Electronics",
     description:
       "PCB Design | PCB Fabrication | PCB Assembly | Electronic Components",
-    url: "https://tesseractelectronics.online",
+   url: "https://tesseractelectronics.online",
     siteName: "Tesseract Electronics",
      images: ["/og-image.png"],
     locale: "en_IN",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   title: "Tesseract Electronics",
   description:
     "PCB Design | PCB Manufacturing | PCB Assembly | Electronic Components",
-  images: ["/og-image.jpg"],
+  images: ["/og-image.png"],
 },
 
   robots: {
@@ -69,29 +69,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+  <html lang="en">
+    <body>
 
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Tesseract Electronics",
-      url: "https://tesseractelectronics.online",
-      logo: "https://tesseractelectronics.online/logo.png",
-      email: "mailto:tesseractelectronics24@gmail.com",
-      telephone: "+91-8123663810",
-      sameAs: [
-        "https://www.instagram.com/tesseract_electronics"
-      ],
-      description:
-        "PCB Design, PCB Manufacturing, PCB Assembly and Electronic Components Supplier in India.",
-    }),
-  }}
-/>{children}</body>
-      <GoogleAnalytics gaId="G-JH145YBCC9" />
-    </html>
-  );
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Tesseract Electronics",
+            url: "https://tesseractelectronics.online",
+            logo: "https://tesseractelectronics.online/logo.png",
+            email: "mailto:tesseractelectronics24@gmail.com",
+            telephone: "+91-8123663810",
+            sameAs: [
+              "https://www.instagram.com/tesseract_electronics"
+            ],
+            description:
+              "PCB Design, PCB Manufacturing, PCB Assembly and Electronic Components Supplier in India."
+          })
+        }}
+      />
+
+      {children}
+
+    </body>
+
+    <GoogleAnalytics gaId="G-JH145YBCC9" />
+  </html>
+);
 }
