@@ -7,8 +7,7 @@ export const metadata: Metadata = {
     "Tesseract Electronics | PCB Design | PCB Fabrication | PCB Assembly | Electronic Components Sourcing",
 
   description:
-    "Tesseract Electronics is a Bengaluru-based provider of PCB Design, PCB Fabrication, PCB Assembly, Electronic Components, BOM Fulfillment and Technical Support across India.",
-
+  "Tesseract Electronics is a leading PCB manufacturer in India offering PCB Design, PCB Fabrication, PCB Assembly, SMT & Through Hole Assembly, Electronic Components sourcing, BOM fulfillment, and prototype PCB manufacturing.",
   keywords: [
     "PCB Design Bangalore",
     "PCB Fabrication Bangalore",
@@ -39,17 +38,29 @@ export const metadata: Metadata = {
       "PCB Design | PCB Fabrication | PCB Assembly | Electronic Components",
     url: "https://tesseractelectronics.online",
     siteName: "Tesseract Electronics",
+     images: ["/og-image.png"],
     locale: "en_IN",
     type: "website",
   },
+  twitter: {
+  card: "summary_large_image",
+  title: "Tesseract Electronics",
+  description:
+    "PCB Design | PCB Manufacturing | PCB Assembly | Electronic Components",
+  images: ["/og-image.jpg"],
+},
 
   robots: {
+  index: true,
+  follow: true,
+  googleBot: {
     index: true,
     follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
   },
-  verification: {
-    google: "SpqhtmakyhsbKmLcVcD2ETFkeY4SPKT8k9M2jdxLBVE",
-  },
+},
 };
 
 export default function RootLayout({
@@ -59,7 +70,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Tesseract Electronics",
+      url: "https://tesseractelectronics.online",
+      logo: "https://tesseractelectronics.online/logo.png",
+      email: "mailto:tesseractelectronics24@gmail.com",
+      telephone: "+91-8123663810",
+      sameAs: [
+        "https://www.instagram.com/tesseract_electronics"
+      ],
+      description:
+        "PCB Design, PCB Manufacturing, PCB Assembly and Electronic Components Supplier in India.",
+    }),
+  }}
+/>{children}</body>
       <GoogleAnalytics gaId="G-JH145YBCC9" />
     </html>
   );
