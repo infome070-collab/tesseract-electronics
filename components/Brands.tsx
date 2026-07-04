@@ -18,7 +18,7 @@ const brands = [
   "wurth elektronik",
   "yageo",
   "toshiba",
-  "renesas",
+  "Renesas",
   "te",
   "ti",
   "vishay",
