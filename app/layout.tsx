@@ -38,7 +38,14 @@ export const metadata: Metadata = {
       "PCB Design | PCB Fabrication | PCB Assembly | Electronic Components",
    url: "https://tesseractelectronics.online",
     siteName: "Tesseract Electronics",
-     images: ["/og-image.png"],
+     images: [
+  {
+    url: "https://tesseractelectronics.online/og-image.png",
+    width: 1200,
+    height: 630,
+    alt: "Tesseract Electronics",
+  },
+],
     locale: "en_IN",
     type: "website",
   },
