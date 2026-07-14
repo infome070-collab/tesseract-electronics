@@ -23,13 +23,15 @@ export default function Team() {
       <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition">
 
         <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-3xl mb-5">
-          👩‍💼
+          👩
         </div>
 
         <h3 className="text-2xl font-bold text-slate-900">
           Suganya Manoharan
         </h3>
-
+<p className="text-green-600 font-semibold mt-1">
+          Operations & Business Development(Pan India)
+        </p>
         <div className="mt-6 space-y-2 text-gray-700">
           <p>✔ Sales & Customer Support</p>
           <p>✔ Business Development</p>
@@ -61,7 +63,7 @@ export default function Team() {
       <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition">
 
         <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-3xl mb-5">
-         👨‍💼
+         👨
         </div>
 
         <h3 className="text-2xl font-bold text-slate-900">
@@ -69,7 +71,7 @@ export default function Team() {
         </h3>
 
         <p className="text-green-600 font-semibold mt-1">
-          Operations
+          Accounts & Purchase
         </p>
 
         <div className="mt-6 space-y-2 text-gray-700">
