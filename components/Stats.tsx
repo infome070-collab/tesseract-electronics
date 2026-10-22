@@ -1,90 +1,72 @@
+
 "use client";
 
-import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
-import { CircuitBoard, Package, Users, Headphones } from "lucide-react";
+import { CircuitBoard, Package, Workflow } from "lucide-react";
 
-const stats = [
+const highlights = [
   {
     icon: CircuitBoard,
-    end: 1000,
-    suffix: "+",
-    title: "PCB Projects",
+    title: "PCB Solutions",
+    description:
+      "Design, fabrication and assembly support for electronics projects.",
   },
   {
     icon: Package,
-    end: 10000,
-    suffix: "+",
-    title: "Electronic Components",
+    title: "Component Sourcing",
+    description:
+      "Electronic component sourcing based on your BOM and requirements.",
   },
   {
-    icon: Users,
-    end: 50,
-    suffix: "+",
-    title: "Industry Partners",
+    icon: Workflow,
+    title: "End-to-End Support",
+    description:
+      "From reverse engineering and prototyping to production coordination.",
   },
-
 ];
 
 export default function Stats() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.3,
-  });
+  return (
+    <section className="bg-sky-700 py-16 text-white sm:py-20">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div className="mb-12 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">
+            Why Tesseract Electronics
+          </p>
 
- return (
-  <section
-    ref={ref}
-    className="bg-sky-700 py-20 text-white"
-  >
-    <div className="mx-auto max-w-7xl px-1">
+          <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
+            Electronics Solutions Under One Roof
+          </h2>
 
-      <div className="mb-14 text-center">
-        <h2 className="text-4xl font-bold">
-          Company Highlights
-        </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-sky-100 sm:text-lg">
+            Supporting businesses with PCB services, component sourcing
+            and practical solutions for electronics development.
+          </p>
+        </div>
 
-        <p className="mt-4 text-lg text-sky-100">
-          Delivering quality PCB solutions and electronic components across India.
-        </p>
-      </div>
-
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-
-          {stats.map((item, index) => {
+        <div className="grid gap-6 md:grid-cols-3">
+          {highlights.map((item) => {
             const Icon = item.icon;
 
             return (
-              <div key={index}>
-                <div className="rounded-xl bg-white p-8 text-center shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-4xl">
-
-                  <Icon
-                    className="mx-auto mb-4 text-sky-600"
-                    size={50}
-                  />
-
-                  <h3 className="text-4xl font-bold text-sky-700">
-                    {inView && (
-                      <CountUp
-                        end={item.end}
-                        duration={2}
-                        separator=","
-                        suffix={item.suffix}
-                      />
-                    )}
-                  </h3>
-
-                  <p className="mt-3 text-lg font-medium text-gray-700">
-                    {item.title}
-                  </p>
-
+              <div
+                key={item.title}
+                className="group rounded-2xl border border-white/15 bg-white p-7 text-center text-slate-900 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
+              >
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-50 text-sky-700 transition group-hover:bg-sky-100">
+                  <Icon size={32} strokeWidth={1.8} />
                 </div>
+
+                <h3 className="mt-5 text-xl font-bold">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {item.description}
+                </p>
               </div>
             );
           })}
-
         </div>
-
       </div>
     </section>
   );

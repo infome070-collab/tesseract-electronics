@@ -3,38 +3,77 @@ import {
   Cpu,
   CircuitBoard,
   Factory,
-  Package,
+  PackageSearch,
+  ScanSearch,
   ArrowRight,
+  CheckCircle2,
 } from "lucide-react";
 
 const services = [
   {
+    number: "01",
     icon: CircuitBoard,
     title: "PCB Design",
     description:
-      "High-speed, multilayer and embedded PCB design using industry-standard CAD tools for reliable and production-ready boards.",
+      "Transform your concept into a PCB design aligned with your technical and manufacturing requirements.",
+    features: [
+      "Schematic and PCB layout",
+      "Component selection support",
+      "Design for manufacturability",
+    ],
     cta: "Discuss Your PCB",
   },
   {
+    number: "02",
     icon: Factory,
     title: "PCB Fabrication",
     description:
-      "Prototype and production PCB manufacturing with quality control, competitive pricing and dependable turnaround.",
+      "PCB fabrication support for prototype development and production requirements based on your specifications.",
+    features: [
+      "Single and double-sided PCBs",
+      "Multilayer PCB requirements",
+      "Prototype and production orders",
+    ],
     cta: "Get PCB Quote",
   },
   {
+    number: "03",
     icon: Cpu,
     title: "PCB Assembly",
     description:
-      "SMT, Through-Hole and mixed-technology PCB assembly with component sourcing and testing support.",
+      "Assembly support for electronic boards, with component procurement and manufacturing coordination.",
+    features: [
+      "SMT assembly",
+      "Through-hole assembly",
+      "Mixed-technology assembly",
+    ],
     cta: "Request Assembly Quote",
   },
   {
-    icon: Package,
-    title: "Component Sourcing",
+    number: "04",
+    icon: PackageSearch,
+    title: "Components Sourcing",
     description:
-      "Electronic component sourcing and BOM fulfilment from trusted manufacturers and suppliers at competitive prices.",
+      "Component sourcing support for production BOMs, development projects and specific part-number requirements.",
+    features: [
+      "Active and passive components",
+      "BOM-based procurement",
+      "Alternate and hard-to-find parts",
+    ],
     cta: "Send Your BOM",
+  },
+  {
+    number: "05",
+    icon: ScanSearch,
+    title: "Reverse Engineering",
+    description:
+      "Technical support for analysing existing PCBs and recreating designs based on available reference material.",
+    features: [
+      "PCB and component analysis",
+      "BOM extraction support",
+      "Schematic and layout recreation",
+    ],
+    cta: "Discuss Your Requirement",
   },
 ];
 
@@ -42,88 +81,126 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="bg-slate-50 px-6 py-20"
+      className="scroll-mt-24 bg-slate-50 px-5 py-20 sm:px-8 lg:px-10 lg:py-24"
     >
       <div className="mx-auto max-w-7xl">
-
-        {/* Section Heading */}
-        <div className="mb-14 text-center">
-          <p className="mb-3 font-semibold uppercase tracking-widest text-sky-600">
-            What We Do
+        {/* Heading */}
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-blue-700">
+            Engineering · Manufacturing · Sourcing
           </p>
 
-          <h2 className="mb-5 text-4xl font-bold text-gray-900 md:text-5xl">
-            Our Services
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            Electronics Solutions,{" "}
+            <span className="text-blue-700">All in One Place</span>
           </h2>
 
-          <p className="mx-auto max-w-3xl text-lg leading-8 text-gray-600">
-            Complete electronics solutions from PCB design and manufacturing
-            to assembly and electronic component sourcing.
+          <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+            From PCB design and fabrication to assembly, component sourcing
+            and reverse engineering, we support your electronics requirements
+            from prototype to production.
           </p>
         </div>
 
-        {/* Services */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {/* Service cards */}
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
 
             return (
-              <div
-                key={service.title}
-                className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-md transition duration-300 hover:-translate-y-2 hover:border-sky-200 hover:shadow-xl"
+              <article
+                key={service.number}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl sm:p-7"
               >
+                <div className="flex items-start justify-between">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white">
+                    <Icon size={27} strokeWidth={1.8} />
+                  </div>
 
-                {/* Icon */}
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-sky-50 text-sky-600 transition group-hover:bg-sky-600 group-hover:text-white">
-                  <Icon size={30} strokeWidth={2} />
+                  <span className="text-sm font-bold tracking-widest text-slate-300">
+                    {service.number}
+                  </span>
                 </div>
 
-                {/* Title */}
-                <h3 className="mb-4 text-xl font-bold text-gray-900">
+                <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-900">
                   {service.title}
                 </h3>
 
-                {/* Description */}
-                <p className="mb-6 flex-grow leading-7 text-gray-600">
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   {service.description}
                 </p>
 
-                {/* CTA */}
+                <ul className="mt-5 space-y-3">
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-2.5 text-sm text-slate-600"
+                    >
+                      <CheckCircle2
+                        size={17}
+                        className="mt-0.5 shrink-0 text-blue-600"
+                      />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
                 <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 font-semibold text-sky-600 transition hover:text-sky-800"
+                  href="/#contact"
+                  className="mt-7 inline-flex items-center gap-2 border-t border-slate-100 pt-5 text-sm font-bold text-blue-700 transition-colors hover:text-blue-900"
                 >
                   {service.cta}
                   <ArrowRight
-                    size={18}
+                    size={17}
                     className="transition-transform group-hover:translate-x-1"
                   />
                 </a>
-              </div>
+              </article>
             );
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-14 rounded-2xl bg-sky-700 px-6 py-10 text-center text-white shadow-lg md:px-10">
-          <h3 className="mb-3 text-2xl font-bold md:text-3xl">
-            Have a Project or BOM?
-          </h3>
+        {/* Enquiry banner */}
+        <div className="relative mt-12 overflow-hidden rounded-2xl bg-gradient-to-r from-slate-950 via-blue-950 to-blue-800 px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-8 lg:px-12">
+          <div
+            className="pointer-events-none absolute -right-12 -top-20 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl"
+            aria-hidden="true"
+          />
 
-          <p className="mx-auto mb-6 max-w-2xl text-sky-100">
-            Send us your PCB files, BOM or component requirement.
-            Our team will review your requirement and provide a quotation.
-          </p>
+          <div className="relative">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300">
+              Have a requirement?
+            </p>
 
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-lg bg-white px-7 py-3 font-bold text-sky-700 transition hover:bg-sky-50"
-          >
-            Send Your Requirement
-            <ArrowRight size={18} />
-          </a>
+            <h3 className="mt-3 text-2xl font-extrabold sm:text-3xl">
+              Have a Project, PCB File or BOM?
+            </h3>
+
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+              Share your part numbers, BOM, Gerber files or reference PCB
+              images. Our team can review your requirement for quotation.
+            </p>
+          </div>
+
+          <div className="relative mt-7 flex shrink-0 flex-col gap-3 sm:flex-row lg:mt-0">
+            <a
+              href="/#contact"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-bold text-blue-950 transition hover:bg-sky-100"
+            >
+              Send Your Requirement
+              <ArrowRight size={18} />
+            </a>
+
+            <a
+              href="https://wa.me/918123663810?text=Hello%20Tesseract%20Electronics%2C%20I%20have%20an%20electronics%20requirement."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/25 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+            >
+              WhatsApp Us
+            </a>
+          </div>
         </div>
-
       </div>
     </section>
   );

@@ -9,46 +9,32 @@ import Industries from "@/components/Industries";
 import About from "@/components/About";
 import Brands from "@/components/Brands";
 import Contact from "@/components/Contact";
-import Team from "@/components/Team";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-slate-50">
-      {/* Navigation */}
+    <main className="min-h-screen overflow-hidden bg-white text-slate-900">
       <Header />
 
-      {/* Main Lead Generation Section */}
       <Hero />
 
-      {/* Quick credibility / business highlights */}
+
       <Stats />
 
-      {/* Why customers should choose Tesseract */}
-      <WhyChooseUs />
-
-      {/* Core services */}
-      <Services />
-
-      {/* Electronic components */}
-      <Products />
-
-      {/* Industries we serve */}
-      <Industries />
-
-      {/* Company information */}
       <About />
 
-      {/* Trusted component brands */}
+      <Services />
+
+      <Products />
+
+      <Industries />
+
+      <WhyChooseUs />
+
       <Brands />
 
-      {/* Main enquiry / RFQ section */}
       <Contact />
 
-      {/* Team / company credibility */}
-      <Team />
-
-      {/* Footer */}
       <Footer />
     </main>
   );

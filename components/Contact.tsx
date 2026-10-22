@@ -1,7 +1,43 @@
+
 "use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  MessageCircle,
+  ArrowRight,
+  CheckCircle2,
+  Clock3,
+  Upload,
+  Send,
+} from "lucide-react";
+
+const inputClass =
+  "w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-100";
+
+const contactDetails = [
+  {
+    icon: MapPin,
+    title: "Our Location",
+    value: "Bengaluru, Karnataka, India",
+    href: undefined,
+  },
+  {
+    icon: Phone,
+    title: "Call Our Team",
+    value: "+91 8123663810",
+    href: "tel:+918123663810",
+  },
+  {
+    icon: Mail,
+    title: "Email Enquiries",
+    value: "tesseractelectronics24@gmail.com",
+    href: "mailto:tesseractelectronics24@gmail.com",
+  },
+];
 
 export default function Contact() {
   const router = useRouter();
@@ -9,6 +45,8 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (loading) return;
+
     setLoading(true);
 
     try {
@@ -23,11 +61,11 @@ export default function Contact() {
       if (response.ok) {
         router.push("/thank-you");
       } else {
-        alert("Unable to send enquiry. Please try again.");
+        alert("Unable to send your enquiry. Please check your details and try again.");
       }
     } catch (error) {
       console.error(error);
-      alert("Something went wrong. Please try again.");
+      alert("Something went wrong. Please try again or contact us directly.");
     } finally {
       setLoading(false);
     }
@@ -36,213 +74,331 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-sky-700 px-6 py-20 text-white"
+      className="relative overflow-hidden bg-slate-950 px-6 py-20 md:py-24"
     >
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
+      <div className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full bg-sky-700/20 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-blue-700/20 blur-3xl" />
 
-        {/* LEFT SIDE */}
-        <div className="flex flex-col justify-center">
-          <p className="mb-3 font-semibold uppercase tracking-widest text-sky-200">
-            Get in Touch
-          </p>
+      <div className="relative mx-auto max-w-7xl">
+        {/* Section heading */}
+        <div className="mb-14 max-w-3xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-sky-300">
+            <MessageCircle size={15} />
+            Let's Discuss Your Project
+          </span>
 
-          <h2 className="mb-6 text-4xl font-bold md:text-5xl">
-            Request a Quote
+          <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+            Have an Electronics Requirement?
+            <span className="mt-2 block text-sky-400">
+              Let's Work Together.
+            </span>
           </h2>
 
-          <p className="mb-8 max-w-xl text-lg leading-8 text-sky-100">
-            Looking for PCB Design, PCB Fabrication, PCB Assembly or
-            Electronic Components? Send us your requirement and our team
-            will get back to you.
+          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+            Send us your BOM, component part numbers, PCB files or project
+            specifications. Our team will review your requirements and
+            discuss suitable sourcing or PCB service options.
           </p>
+        </div>
 
-          <div className="space-y-6">
-
-            {/* Address */}
+        <div className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+          {/* Contact information */}
+          <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-bold">📍 Address</h3>
-              <p className="text-sky-100">
-                Bengaluru, Karnataka, India
+              <h3 className="text-xl font-bold text-white">
+                Contact Information
+              </h3>
+              <p className="mt-2 text-sm leading-7 text-slate-400">
+                Reach out to us to discuss your next electronics project.
               </p>
             </div>
 
-            {/* Phone */}
-            <div>
-              <h3 className="text-xl font-bold">📞 Phone</h3>
-              <a
-                href="tel:+918123663810"
-                className="text-sky-100 hover:text-white"
-              >
-                +91 8123663810
-              </a>
+            <div className="space-y-4">
+              {contactDetails.map((item) => {
+                const Icon = item.icon;
+
+                const content = (
+                  <div className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:border-sky-400/40 hover:bg-white/[0.07]">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky-500/15 text-sky-300">
+                      <Icon size={23} />
+                    </div>
+
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-slate-400">
+                        {item.title}
+                      </p>
+                      <p className="mt-1 break-words text-sm font-semibold text-white">
+                        {item.value}
+                      </p>
+                    </div>
+                  </div>
+                );
+
+                return item.href ? (
+                  <a
+                    key={item.title}
+                    href={item.href}
+                    className="block"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div key={item.title}>{content}</div>
+                );
+              })}
             </div>
 
-            {/* Email */}
-            <div>
-              <h3 className="text-xl font-bold">📧 Email</h3>
-              <a
-                href="mailto:tesseractelectronics24@gmail.com"
-                className="text-sky-100 hover:text-white"
-              >
-                tesseractelectronics24@gmail.com
-              </a>
-            </div>
+            <a
+              href="https://wa.me/918123663810?text=Hello%20Tesseract%20Electronics%2C%20I%20would%20like%20to%20discuss%20an%20electronics%20requirement."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between gap-4 rounded-2xl border border-emerald-400/25 bg-emerald-400/10 p-5 transition hover:bg-emerald-400/15"
+            >
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-400/15 text-emerald-300">
+                  <MessageCircle size={24} />
+                </div>
+                <div>
+                  <p className="font-bold text-white">Prefer WhatsApp?</p>
+                  <p className="mt-1 text-sm text-slate-300">
+                    Chat with our team
+                  </p>
+                </div>
+              </div>
+              <ArrowRight size={20} className="shrink-0 text-emerald-300" />
+            </a>
 
-            {/* WhatsApp */}
-            <div>
-              <h3 className="text-xl font-bold">💬 WhatsApp</h3>
-              <a
-                href="https://wa.me/918123663810?text=Hello%20Tesseract%20Electronics%2C%20I%20would%20like%20to%20request%20a%20quotation."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sky-100 hover:text-white"
-              >
-                Chat with us on WhatsApp
-              </a>
-            </div>
+            <div className="border-t border-white/10 pt-6">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                How We Can Help
+              </p>
 
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {[
+                  "PCB Design",
+                  "PCB Fabrication",
+                  "PCB Assembly",
+                  "Components Sourcing",
+                  "Reverse Engineering",
+                ].map((service) => (
+                  <div
+                    key={service}
+                    className="flex items-center gap-2 text-sm text-slate-300"
+                  >
+                    <CheckCircle2 size={17} className="shrink-0 text-sky-400" />
+                    {service}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+
+          {/* Enquiry form */}
+          <form
+            onSubmit={handleSubmit}
+            encType="multipart/form-data"
+            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl sm:p-8 md:p-9"
+          >
+            <div className="mb-7 border-b border-slate-100 pb-6">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-700">
+                  <Send size={22} />
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-extrabold text-slate-900">
+                    Request a Quote
+                  </h3>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Tell us what you need.
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-4 text-sm leading-6 text-slate-500">
+                Fields marked with * are required. You can attach your BOM
+                or relevant project files below.
+              </p>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label htmlFor="contact-name" className="mb-2 block text-sm font-semibold text-slate-700">
+                  Full Name *
+                </label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  name="name"
+                  placeholder="Your full name"
+                  autoComplete="name"
+                  required
+                  className={inputClass}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contact-company" className="mb-2 block text-sm font-semibold text-slate-700">
+                  Company Name
+                </label>
+                <input
+                  id="contact-company"
+                  type="text"
+                  name="company"
+                  placeholder="Your company"
+                  autoComplete="organization"
+                  className={inputClass}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contact-phone" className="mb-2 block text-sm font-semibold text-slate-700">
+                  Phone / WhatsApp *
+                </label>
+                <input
+                  id="contact-phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+91"
+                  autoComplete="tel"
+                  required
+                  className={inputClass}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contact-email" className="mb-2 block text-sm font-semibold text-slate-700">
+                  Business Email
+                </label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  name="email"
+                  placeholder="name@company.com"
+                  autoComplete="email"
+                  className={inputClass}
+                />
+              </div>
+
+              <div className="sm:col-span-2">
+                <label htmlFor="contact-service" className="mb-2 block text-sm font-semibold text-slate-700">
+                  Requirement Type *
+                </label>
+                <select
+                  id="contact-service"
+                  name="service"
+                  required
+                  defaultValue=""
+                  className={inputClass}
+                >
+                  <option value="" disabled>
+                    Select a service
+                  </option>
+                  <option value="Electronic Components">
+                    Electronic Components
+                  </option>
+                  <option value="BOM Sourcing">BOM Sourcing</option>
+                  <option value="PCB Design">PCB Design</option>
+                  <option value="PCB Fabrication">PCB Fabrication</option>
+                  <option value="PCB Assembly">PCB Assembly</option>
+                  <option value="Complete PCB Solution">
+                    Complete PCB Solution
+                  </option>
+                  <option value="Reverse Engineering">
+                    Reverse Engineering
+                  </option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="contact-part" className="mb-2 block text-sm font-semibold text-slate-700">
+                  Part Number
+                </label>
+                <input
+                  id="contact-part"
+                  type="text"
+                  name="partNumber"
+                  placeholder="Manufacturer part number"
+                  className={inputClass}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contact-quantity" className="mb-2 block text-sm font-semibold text-slate-700">
+                  Required Quantity
+                </label>
+                <input
+                  id="contact-quantity"
+                  type="text"
+                  name="quantity"
+                  placeholder="e.g. 500 pcs"
+                  className={inputClass}
+                />
+              </div>
+
+              <div className="sm:col-span-2">
+                <label htmlFor="contact-message" className="mb-2 block text-sm font-semibold text-slate-700">
+                  Project Details *
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows={4}
+                  placeholder="Describe your BOM, PCB specifications, quantity, target delivery or other requirements..."
+                  required
+                  className={inputClass}
+                />
+              </div>
+
+              <div className="sm:col-span-2">
+                <label htmlFor="contact-attachment" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
+                  <Upload size={17} className="text-sky-600" />
+                  Attach BOM / PCB / Project Files
+                </label>
+
+                <input
+                  id="contact-attachment"
+                  type="file"
+                  name="attachment"
+                  accept=".xlsx,.xls,.csv,.pdf,.zip,.rar,.gerber,.brd,.sch"
+                  className="w-full rounded-xl border border-dashed border-slate-300 bg-slate-50 p-3 text-sm text-slate-600 file:mr-4 file:rounded-lg file:border-0 file:bg-sky-100 file:px-3 file:py-2 file:font-semibold file:text-sky-800 hover:file:bg-sky-200"
+                />
+
+                <p className="mt-2 text-xs leading-5 text-slate-500">
+                  Optional. Accepted formats depend on your file and the
+                  server's upload limits.
+                </p>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="mt-7 flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-4 font-bold text-white shadow-lg shadow-sky-600/20 transition hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {loading ? "Sending Your Enquiry..." : "Submit Enquiry & Request Quote"}
+              {!loading && <ArrowRight size={19} />}
+            </button>
+
+            <div className="mt-5 flex items-start justify-center gap-2 text-center text-xs leading-5 text-slate-500">
+              <Clock3 size={15} className="mt-0.5 shrink-0" />
+              <p>
+                Our team will review your enquiry and respond as soon as
+                possible.
+              </p>
+            </div>
+          </form>
         </div>
 
-        {/* RIGHT SIDE - RFQ FORM */}
-        <form
-          onSubmit={handleSubmit}
-          encType="multipart/form-data"
-          className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl md:p-8"
-        >
-          <div>
-            <h3 className="text-2xl font-bold text-sky-700">
-              Send Your Requirement
-            </h3>
-
-            <p className="mt-2 text-sm text-slate-500">
-              Send your part number, quantity, PCB requirement or BOM.
-            </p>
-          </div>
-
-          {/* Name */}
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name *"
-            required
-            className="w-full rounded-lg border border-slate-300 bg-white p-3 text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-          />
-
-          {/* Company */}
-          <input
-            type="text"
-            name="company"
-            placeholder="Company Name"
-            className="w-full rounded-lg border border-slate-300 bg-white p-3 text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-          />
-
-          {/* Phone */}
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone / WhatsApp Number *"
-            required
-            className="w-full rounded-lg border border-slate-300 bg-white p-3 text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-          />
-
-          {/* Email */}
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            className="w-full rounded-lg border border-slate-300 bg-white p-3 text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-          />
-
-          {/* Requirement Type */}
-          <select
-            name="service"
-            required
-            defaultValue=""
-            className="w-full rounded-lg border border-slate-300 bg-white p-3 text-gray-900 outline-none transition-all duration-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-          >
-            <option value="" disabled>
-              Select Your Requirement *
-            </option>
-            <option value="Electronic Components">
-              Electronic Components
-            </option>
-            <option value="BOM Sourcing">
-              BOM Sourcing
-            </option>
-            <option value="PCB Design">
-              PCB Design
-            </option>
-            <option value="PCB Fabrication">
-              PCB Fabrication
-            </option>
-            <option value="PCB Assembly">
-              PCB Assembly
-            </option>
-            <option value="Complete PCB Solution">
-              Complete PCB Solution
-            </option>
-            <option value="Other">
-              Other
-            </option>
-          </select>
-
-          {/* Part Number */}
-          <input
-            type="text"
-            name="partNumber"
-            placeholder="Part Number / Component Name"
-            className="w-full rounded-lg border border-slate-300 bg-white p-3 text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-          />
-
-          {/* Quantity */}
-          <input
-            type="text"
-            name="quantity"
-            placeholder="Required Quantity"
-            className="w-full rounded-lg border border-slate-300 bg-white p-3 text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-          />
-
-          {/* Message */}
-          <textarea
-            name="message"
-            rows={4}
-            placeholder="Describe your requirement, specifications, quantity, delivery timeline, etc."
-            required
-            className="w-full rounded-lg border border-slate-300 bg-white p-3 text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-          />
-
-          {/* File Upload */}
-          <div>
-            <label className="mb-2 block text-sm font-semibold text-slate-700">
-              Upload BOM / Part List / PCB Files
-            </label>
-
-            <input
-              type="file"
-              name="attachment"
-              accept=".xlsx,.xls,.csv,.pdf,.zip,.rar,.gerber,.brd,.sch"
-              className="w-full rounded-lg border border-slate-300 bg-white p-3 text-sm text-gray-700"
-            />
-
-            <p className="mt-2 text-xs text-slate-500">
-              Optional. Upload your BOM, Excel, PDF or PCB files.
-            </p>
-          </div>
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full rounded-lg bg-sky-600 px-6 py-4 font-bold text-white transition hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {loading ? "Sending Enquiry..." : "Send Enquiry & Get Quote"}
-          </button>
-
-          <p className="text-center text-xs text-slate-500">
-            We usually respond within 24 hours.
+        <div className="mt-14 border-t border-white/10 pt-7 text-center">
+          <p className="text-sm font-semibold text-slate-400">
+            Tesseract Electronics
           </p>
-        </form>
+          <p className="mt-2 text-sm italic text-sky-300">
+            We Deliver More than Expected
+          </p>
+        </div>
       </div>
     </section>
   );
